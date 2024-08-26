@@ -20,7 +20,7 @@ public class Rizz {
         this.age = 17;
         this.rizzStrength = 900.0;
         this.rizzByDefault = true;
-        this.version = 0.0;
+        this.version = 0.1;
         this.description = "Default object constructor rizzes by default";
     }
 
