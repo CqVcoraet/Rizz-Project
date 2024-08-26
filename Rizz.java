@@ -91,31 +91,35 @@ public class Rizz {
     }
 
     public static void main(String[] args) {
-        // Rizz GUI
+        // Create the frame
         JFrame rizzFrame = new JFrame("Rizzler Control Panel");
-        rizzFrame.setSize(1300, 900);
+        rizzFrame.setSize(1300, 1300);
         rizzFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        rizzFrame.setLayout(null);
         rizzFrame.setResizable(true);
+
+        // Create a panel to hold all components
+        JPanel panel = new JPanel();
+        panel.setLayout(null);
+        panel.setPreferredSize(new Dimension(1300, 900)); // Initial size
 
         // Rizz GUI Title
         JLabel label = new JLabel("Control Panel");
         label.setBounds(20, 20, 350, 50);
-        rizzFrame.add(label);
+        panel.add(label);
         label.setFont(new Font("sans-serif", Font.BOLD, 45));
 
-        // Default Rizzler Info (Initally Hidden)
+        // Default Rizzler Info (Initially Hidden)
         String defaultRizzler = "<html> <b> Default Rizz Object: </b> <br/> Name: Default Rizzler <br/> Age: 17 <br/> Rizz Strength: 900 <br/> Rizz By Default: True <br/> Version: 0.0 <br/> Description: Default System Rizz Object";
         JLabel defaultRizzlerLabel = new JLabel(defaultRizzler);
         defaultRizzlerLabel.setBounds(20, 100, 1200, 300);
         defaultRizzlerLabel.setFont(new Font("sans-serif", Font.PLAIN, 20));
         defaultRizzlerLabel.setVisible(false);
-        rizzFrame.add(defaultRizzlerLabel);
+        panel.add(defaultRizzlerLabel);
 
         // Rizzler Default Button
         JButton rizzlerButton = new JButton("System Default Info");
         rizzlerButton.setBounds(20, 95, 160, 50);
-        rizzFrame.add(rizzlerButton);
+        panel.add(rizzlerButton);
 
         // Action Listener
         rizzlerButton.addActionListener(new ActionListener() {
@@ -128,8 +132,36 @@ public class Rizz {
             }
         });
 
-        // Always have this GUI line at the below all other GUI code lines!
-        rizzFrame.setVisible(true);
+        // Wrap the panel in a JScrollPane
+        JScrollPane scrollPane = new JScrollPane(panel);
+        rizzFrame.add(scrollPane);
 
+        // Rizzler 1 Button
+        JButton rizzler1Button = new JButton("Rizzler 1");
+        rizzler1Button.setBounds(20, 360, 160, 50);
+        panel.add(rizzler1Button);
+
+        // Rizzler 1 Info (Initally Hidden)
+        String rizzler1 = "<html> <b> Rizzler 1: </b> <br/> Rizzler 1 cannot be accessed at the moment.";
+        JLabel rizzler1Label = new JLabel(rizzler1);
+        rizzler1Label.setBounds(20, 425, 160, 95);
+        rizzler1Label.setFont(new Font("sans-serif", Font.PLAIN, 20));
+        rizzler1Label.setVisible(false);
+        panel.add(rizzler1Label);
+
+        // Action Listener
+        rizzler1Button.addActionListener(new ActionListener() {
+            private boolean isVisible = false;
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                isVisible = !isVisible;
+                rizzler1Label.setVisible(isVisible);
+            }
+        });
+
+
+        // Set the frame visible at the end
+        rizzFrame.setVisible(true);
     }
 }
