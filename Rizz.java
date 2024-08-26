@@ -112,7 +112,7 @@ public class Rizz {
         JLabel label = new JLabel("Control Panel");
         label.setBounds(20, 20, 350, 50);
         panel.add(label);
-        label.setFont(lexendFont.deriveFont(45f));
+        label.setFont(Lexend.deriveFont(45f));
 
         // Default Rizzler Info (Initially Hidden)
         String defaultRizzler = "<html> <b> Default Rizz Object: </b> <br/> Name: Default Rizzler <br/> Age: 17 <br/> Rizz Strength: 900 <br/> Rizz By Default: True <br/> Version: 0.0 <br/> Description: Default System Rizz Object";
