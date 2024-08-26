@@ -5,13 +5,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-import javax.sound.sampled.AudioInputStream;
 import java.io.File;
+import java.io.IOException;
 
-
-// Rizz Class
 public class Rizz {
     // Attributes
     private String name;
@@ -21,7 +17,7 @@ public class Rizz {
     private double version;
     private String description;
 
-    // Default Constuctor
+    // Default Constructor
     public Rizz() {
         this.name = "Default Rizzler";
         this.age = 17;
@@ -91,6 +87,16 @@ public class Rizz {
     }
 
     public static void main(String[] args) {
+        // Load the Lexend font and set it as the default for all UI components
+        try {
+            Font lexendFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/resources/fonts/Lexend-Regular.ttf"));
+            lexendFont = lexendFont.deriveFont(20f);
+            UIManager.put("Label.font", lexendFont);
+            UIManager.put("Button.font", lexendFont);
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+        }
+
         // Create the frame
         JFrame rizzFrame = new JFrame("Rizzler Control Panel");
         rizzFrame.setSize(1300, 1300);
@@ -106,13 +112,12 @@ public class Rizz {
         JLabel label = new JLabel("Control Panel");
         label.setBounds(20, 20, 350, 50);
         panel.add(label);
-        label.setFont(new Font("sans-serif", Font.BOLD, 45));
+        label.setFont(lexendFont.deriveFont(45f));
 
         // Default Rizzler Info (Initially Hidden)
         String defaultRizzler = "<html> <b> Default Rizz Object: </b> <br/> Name: Default Rizzler <br/> Age: 17 <br/> Rizz Strength: 900 <br/> Rizz By Default: True <br/> Version: 0.0 <br/> Description: Default System Rizz Object";
         JLabel defaultRizzlerLabel = new JLabel(defaultRizzler);
         defaultRizzlerLabel.setBounds(20, 100, 1200, 300);
-        defaultRizzlerLabel.setFont(new Font("sans-serif", Font.PLAIN, 20));
         defaultRizzlerLabel.setVisible(false);
         panel.add(defaultRizzlerLabel);
 
@@ -141,11 +146,10 @@ public class Rizz {
         rizzler1Button.setBounds(20, 360, 160, 50);
         panel.add(rizzler1Button);
 
-        // Rizzler 1 Info (Initally Hidden)
+        // Rizzler 1 Info (Initially Hidden)
         String rizzler1 = "<html> <b> Rizzler 1: </b> <br/> Rizzler 1 cannot be accessed at the moment.";
         JLabel rizzler1Label = new JLabel(rizzler1);
-        rizzler1Label.setBounds(20, 425, 160, 95);
-        rizzler1Label.setFont(new Font("sans-serif", Font.PLAIN, 20));
+        rizzler1Label.setBounds(20, 435, 160, 115);
         rizzler1Label.setVisible(false);
         panel.add(rizzler1Label);
 
@@ -159,7 +163,6 @@ public class Rizz {
                 rizzler1Label.setVisible(isVisible);
             }
         });
-
 
         // Set the frame visible at the end
         rizzFrame.setVisible(true);
