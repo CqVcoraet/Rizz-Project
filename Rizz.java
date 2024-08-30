@@ -165,7 +165,7 @@ public class Rizz {
         panel.add(rizzler2Button);
 
         // Rizzler 2 Info (Initially Hidden)
-        String rizzler2 = "<html><b>Rizzler 2:</b><br/>Womp womp lil jit.";
+        String rizzler2 = "<html><b>Rizzler 2:</b><br/>Womp womp lil jit. </html>";
         JLabel rizzler2Label = new JLabel(rizzler2);
         rizzler2Label.setBounds(20, 595, 160, 115);
         rizzler2Label.setFont(new Font("Serif", Font.PLAIN, 20));
