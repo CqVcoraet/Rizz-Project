@@ -113,6 +113,7 @@ public class Rizz {
         JButton rizzlerButton = new JButton("System Default");
         rizzlerButton.setBounds(20, 95, 160, 50);
         rizzlerButton.setFont(new Font("Serif", Font.PLAIN, 20));
+        rizzlerButton.setFocusable(false);
         panel.add(rizzlerButton);
 
         // Action Listener
@@ -134,6 +135,7 @@ public class Rizz {
         JButton rizzler1Button = new JButton("Rizzler 1");
         rizzler1Button.setBounds(20, 360, 160, 50);
         rizzler1Button.setFont(new Font("Serif", Font.PLAIN, 20));
+        rizzler1Button.setFocusable(false);
         panel.add(rizzler1Button);
 
         // Rizzler 1 Info (Initially Hidden)
@@ -159,6 +161,7 @@ public class Rizz {
         JButton rizzler2Button = new JButton("Rizzler 2");
         rizzler2Button.setBounds(20, 550, 160, 50);
         rizzler2Button.setFont(new Font("Serif", Font.PLAIN, 20));
+        rizzler2Button.setFocusable(false);
         panel.add(rizzler2Button);
 
         // Rizzler 2 Info (Initially Hidden)
@@ -184,6 +187,7 @@ public class Rizz {
         JButton rizzler3Button = new JButton("Rizzler 3");
         rizzler3Button.setBounds(20, 720, 160, 50);
         rizzler3Button.setFont(new Font("Serif", Font.PLAIN, 20));
+        rizzler3Button.setFocusable(false);
         panel.add(rizzler3Button);
 
         // Rizzler 3 Info (Initially Hidden)
